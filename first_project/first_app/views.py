@@ -7,3 +7,5 @@ def home(request):
     return HttpResponse("Welcome to the home page!")
 def educative(request):
     return HttpResponse("Welcome to the educative page!")
+def show_age(request, age):
+    return HttpResponse("I am %s years old." % age)
