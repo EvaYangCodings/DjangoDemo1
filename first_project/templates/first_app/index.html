@@ -35,10 +35,14 @@
         <li> <b>title filter: </b> {{value | title}} <br> </li>
         <li> <b>cut filter: </b> {{value | cut:" "}} <br> </li>
     </ul>
+    {# My first comment #} Educative
+
     <p>Rendered text with {{ pub_date|date:"c" }}</p>
     {% comment "Optional note" %}
     <p>Commented out text with {{ create_date|date:"c" }}</p>
+    <p>Commented out text with {{ create_date|date:"c" }}</p>
     {% endcomment %}
+    
 </body>
 
 </html>
