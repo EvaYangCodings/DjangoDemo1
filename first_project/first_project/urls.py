@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from first_app import views
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('home/', views.home, name="home"),
-    path('educative/', views.educative, name='educative'),
+    path('', include('first_app.urls')),
+    # path('', views.index, name='index'),
+    # path('home/', views.home, name="home"),
+    # path('educative/', views.educative, name='educative'),
     # path('<age>/', views.show_age, name='show_age'),
-    path('<int:num>/', views.even_or_odd, name='even_or_odd'),
+    # path('<int:num>/', views.even_or_odd, name='even_or_odd'),
 ]
