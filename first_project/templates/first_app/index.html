@@ -5,7 +5,21 @@
     <title>My First Application</title>
 </head>
 <body>
-    <h1>Hello, this is index.html!</h1>
-    {{Emma}}
+    <!-- <h1>Hello, this is index.html!</h1>
+    {{Emma}} -->
+    <table style="width:100%; text-align:center">
+        <tr>
+            <th>index</th>
+            <th>TV Show</th>
+            <th>IMDb Rating</th>
+        </tr>
+        {% for tv_show, IMDb_rating in tv_shows.item %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{tv_show}}</td>
+            <td>{{IMDb_rating}}</td>
+        </tr>
+        {%endfor%}
+    </table>
 </body>
 </html>
