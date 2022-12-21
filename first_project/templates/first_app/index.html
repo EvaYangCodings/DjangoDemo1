@@ -13,13 +13,13 @@
             <th>TV Show</th>
             <th>IMDb Rating</th>
         </tr>
-        {% for tv_show, IMDb_rating in tv_shows.item %}
+        {% for tv_show, IMDb_rating in tv_shows.items %}
         <tr>
             <td>{{forloop.counter}}</td>
             <td>{{tv_show}}</td>
             <td>{{IMDb_rating}}</td>
         </tr>
-        {%endfor%}
+        {% endfor %}
     </table>
 </body>
 </html>
