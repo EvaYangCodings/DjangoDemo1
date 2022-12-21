@@ -14,11 +14,13 @@
             <th>IMDb Rating</th>
         </tr>
         {% for tv_show, IMDb_rating in tv_shows.items %}
+        {% if IMDb_rating == "8.5" %}
         <tr>
             <td>{{forloop.counter}}</td>
             <td>{{tv_show}}</td>
             <td>{{IMDb_rating}}</td>
         </tr>
+        {% endif %}
         {% endfor %}
     </table>
 </body>
