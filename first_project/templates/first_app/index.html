@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>My First Application</title>
 </head>
+
 <body>
     <!-- <h1>Hello, this is index.html!</h1>
     {{Emma}} -->
-    <table style="width:100%; text-align:center">
+    <!-- <table style="width:100%; text-align:center">
         <tr>
             <th>index</th>
             <th>TV Show</th>
@@ -22,6 +24,17 @@
         </tr>
         {% endif %}
         {% endfor %}
-    </table>
+    </table> -->
+    <h1>
+        <center>Filters</center>
+    </h1>
+    <ul>
+        <li> <b>lower filter: </b> {{value | lower}} <br> </li>
+        <li> <b>length filter: </b> {{value | length}} <br> </li>
+        <li> <b>make_list filter: </b> {{value | make_list}} <br> </li>
+        <li> <b>title filter: </b> {{value | title}} <br> </li>
+        <li> <b>cut filter: </b> {{value | cut:" "}} <br> </li>
+    </ul>
 </body>
+
 </html>
