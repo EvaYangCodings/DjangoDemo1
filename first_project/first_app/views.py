@@ -26,3 +26,5 @@ def about(request):
 #     else:
 #         output = "%s is an odd number." % num
 #     return HttpResponse(output)
+def image(request):
+    return render(request, 'first_app/image.html')
