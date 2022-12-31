@@ -17,6 +17,6 @@ class Webpage(models.Model):
 class AccessRecord(models.Model):
     name=models.ForeignKey(Webpage, on_delete=models.CASCADE)
     date = models.DateField(default=date.today)
-
+    count = models.IntegerField(default=0)
     def _str_(self):
         return str(self.date)
