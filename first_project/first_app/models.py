@@ -38,9 +38,6 @@ class Employee(models.Model):
         return self.employee_name
 
 class Project(models.Model):
-
     project_name = models.CharField(max_length=264, unique= True)
     employee_name = models.ManyToManyField('Employee')
-
-    def __str__(self):
-        return self.project_name
+    team_lead = models.OneToOneField('Employee', on_delete=models.CASCADE, related_name='team_lead')
