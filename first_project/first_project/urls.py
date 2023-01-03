@@ -30,5 +30,6 @@ urlpatterns = [
     # path('educative/', views.educative, name='educative'),
     # path('<age>/', views.show_age, name='show_age'),
     # path('<int:num>/', views.even_or_odd, name='even_or_odd'),
-    path('image/',views.image, name="image")
+    path('image/',views.image, name="image"),
+    path('forms/', views.forms, name="form")
 ]

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import SearchForm
 # Create your views here.
 # def index(request):
 #     # favorite_book = {'Raymond':"Book1", 'Emma': 'book2'}
@@ -28,3 +29,7 @@ def about(request):
 #     return HttpResponse(output)
 def image(request):
     return render(request, 'first_app/image.html')
+
+def forms(request):
+    form = SearchForm()
+    return render(request, 'first_app/forms.html', {'form':form})
