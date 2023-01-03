@@ -36,7 +36,11 @@ def image(request):
 #     return render(request, 'first_app/forms.html', {'form':form})
 
 def forms(request):
-    form = TestForm(request.POST or None)
+    initial_dict={
+        "text":"some initial data",
+        "integer":123,
+    }
+    form = TestForm(request.POST or None, initial=initial_dict)
     data = "None"
     text = "None"
     if form.is_valid():
