@@ -8,3 +8,9 @@ class TestForm(forms.Form):
     boolean = forms.BooleanField()
     integer = forms.IntegerField()
     email = forms.EmailField()
+
+    def clean_integer(self):
+        integer = self.cleaned_data.get("integer")
+        if integer <= 10:
+            raise forms.ValidationError("The integer should be greater than 10")
+        return integer
