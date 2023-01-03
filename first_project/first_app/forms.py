@@ -14,3 +14,9 @@ class TestForm(forms.Form):
         if integer <= 10:
             raise forms.ValidationError("The integer should be greater than 10")
         return integer
+
+    def clean_text(self):
+        text = self.cleaned_data.get("text")
+        if len(text) > 10:
+            raise forms.ValidationError("The length of the text should between 7 and 10")
+        return text
