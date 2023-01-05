@@ -41,3 +41,25 @@ class Project(models.Model):
     project_name = models.CharField(max_length=264, unique= True)
     employee_name = models.ManyToManyField('Employee')
     team_lead = models.OneToOneField('Employee', on_delete=models.CASCADE, related_name='team_lead')
+
+class Post(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1,on_delete=models.CASCADE)
+    title = models.CharField(max_length=120)
+    slug = models.SlugField(unique=True)
+    image = models.FileField(upload_to=upload_location, 
+            null=True, 
+            blank=True, 
+            )
+    height_field = models.IntegerField(default=0)
+    width_field = models.IntegerField(default=0)
+    content = models.TextField()
+    draft = models.BooleanField(default=False)
+    publish = models.DateField(auto_now=False, auto_now_add=False)
+    updated = models.DateTimeField(auto_now=True, auto_now_add=False)
+    timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+    def __unicode__(self):
+        return self.title
+
+    def __str__(self):
+        return self.title
