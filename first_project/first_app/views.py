@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import SearchForm, TestForm, PostModelForm
-
+from django.contrib.auth.models import User
+from django.db import IntegrityError
 # Create your views here.
 # def index(request):
 #     # favorite_book = {'Raymond':"Book1", 'Emma': 'book2'}
@@ -13,7 +14,14 @@ from .forms import SearchForm, TestForm, PostModelForm
 
 def home(request):
     # return HttpResponse("Welcome to the home page!")
-    return render(request, 'first_app/home.html')
+    # return render(request, 'first_app/home.html')
+    try:
+        user = User.objects.create_user(username="test", email="test@gmail.com", password="test123456")
+        user.save()
+    except IntegrityError as e:
+        print(e)
+    return HttpResponse("Welcome to home page")
+
 def search(request):
     return render(request, 'first_app/search.html')
 def about(request):
