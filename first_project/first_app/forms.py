@@ -1,5 +1,12 @@
 from django import forms
+from .models import Post
 
+class PostModelForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields= ["user","title","slug","image","content","draft","publish"]
+        exclude= []
+        
 class SearchForm(forms.Form):
     q = forms.CharField()
 
