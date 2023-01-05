@@ -26,8 +26,11 @@ def search(request):
     return render(request, 'first_app/search.html')
 def about(request):
     return render(request, 'first_app/about.html')
-# def educative(request):
-#     return HttpResponse("Welcome to the educative page!")
+def educative(request):
+    user = User.objects.get(username = "test")
+    user.email = "update@gmail.com"
+    user.save()
+    return HttpResponse("Welcome to the educative page!")
 # def show_age(request, age):
 #     return HttpResponse("I am %s years old." % age)
 # def even_or_odd(request, num):
