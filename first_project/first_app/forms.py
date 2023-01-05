@@ -4,9 +4,9 @@ from .models import Post
 class PostModelForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields= ["user","title","slug","image","content","draft","publish"]
-        exclude= []
-        
+        fields= ["user","title","slug","image","content"]
+        exclude= ["draft","publish"]
+
 class SearchForm(forms.Form):
     q = forms.CharField()
 
