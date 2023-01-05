@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import SearchForm
-from .forms import TestForm
+from .forms import SearchForm, TestForm, PostModelForm
+
 # Create your views here.
 # def index(request):
 #     # favorite_book = {'Raymond':"Book1", 'Emma': 'book2'}
@@ -36,11 +36,12 @@ def image(request):
 #     return render(request, 'first_app/forms.html', {'form':form})
 
 def forms(request):
-    initial_dict={
-        "text":"some initial data",
-        "integer":123,
-    }
-    form = TestForm(request.POST or None, initial=initial_dict)
+    # initial_dict={
+    #     "text":"some initial data",
+    #     "integer":123,
+    # }
+    # form = TestForm(request.POST or None, initial=initial_dict)
+    form = PostModelForm(request.POST or None)
     data = "None"
     text = "None"
     if form.is_valid():
